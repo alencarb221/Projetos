@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgueria Delícia - Os Melhores Hambúrgueres da Cidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header com Logo -->
+    <header class="header">
+        <div class="header-content">
+            <h1>🍔 Hamburgueria Delícia</h1>
+            <p>Os melhores hambúrgueres da cidade!</p>
+        </div>
+    </header>
+
+    <!-- Seção Hero com Background -->
+    <section class="hero" style="background-image: url('imagens/foto2.jpg')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Bem-vindo ao Paraíso do Hambúrguer!</h2>
+            <p>Burgers frescos, deliciosos e irresistíveis</p>
+            <a href="https://wa.me/5511912345678?text=Olá! Gostaria de fazer um pedido na Hamburgueria Delícia!" class="btn-pedido" target="_blank">Fazer Pedido no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Seção de Hambúrgueres -->
+    <section class="produtos">
+        <h2 class="titulo-secao">Nossos Hambúrgueres</h2>
+        <div class="container-produtos">
+            <!-- Produto 1 -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <img src="imagens/foto01.jpg" alt="Hambúrguer Clássico">
+                </div>
+                <h3>Hambúrguer Clássico</h3>
+                <p class="descricao">Pão artesanal, carne grelhada e coberturas frescas</p>
+                <p class="preco">R$ 18,90</p>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="card-produto destaque">
+                <span class="badge">MAIS VENDIDO</span>
+                <div class="imagem-container">
+                    <img src="imagens/foto01.jpg" alt="Hamburguão Premium">
+                </div>
+                <h3>Hamburguão Premium</h3>
+                <p class="descricao">Duplo de carne, queijo cheddar, bacon e maionese especial</p>
+                <p class="preco">R$ 28,90</p>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <img src="imagens/foto01.jpg" alt="Picante do Diabo">
+                </div>
+                <h3>Picante do Diabo</h3>
+                <p class="descricao">Carne grelhada, pimenta jalapeño e molho picante</p>
+                <p class="preco">R$ 22,90</p>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <img src="imagens/foto01.jpg" alt="Veggie Power">
+                </div>
+                <h3>Veggie Power</h3>
+                <p class="descricao">Hambúrguer vegano com legumes grelhados</p>
+                <p class="preco">R$ 19,90</p>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="card-produto">
+                <div class="imagem-container">
+                    <img src="imagens/foto01.jpg" alt="Bacon & Ovo">
+                </div>
+                <h3>Bacon & Ovo</h3>
+                <p class="descricao">Carne, bacon crocante e ovo frito na chapa</p>
+                <p class="preco">R$ 25,90</p>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="card-produto destaque">
+                <span class="badge">PROMOÇÃO</span>
+                <div class="imagem-container">
+                    <img src="imagens/foto01.jpg" alt="Triplo Gourmet">
+                </div>
+                <h3>Triplo Gourmet</h3>
+                <p class="descricao">Três carnes, três queijos e tudo o que há de melhor</p>
+                <p class="preco-antes">R$ 35,90</p>
+                <p class="preco">R$ 29,90</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Combos -->
+    <section class="combos">
+        <h2 class="titulo-secao">Combos Imperdíveis</h2>
+        <div class="container-combos">
+            <!-- Combo 1 -->
+            <div class="card-combo">
+                <div class="combo-imagem">🍔 🍟 🥤</div>
+                <h3>Combo Básico</h3>
+                <ul class="lista-itens">
+                    <li>1 Hambúrguer Clássico</li>
+                    <li>1 Batata Média</li>
+                    <li>1 Refrigerante</li>
+                </ul>
+                <p class="preco-combo">R$ 35,90</p>
+            </div>
+
+            <!-- Combo 2 -->
+            <div class="card-combo destaque">
+                <span class="badge-combo">MELHOR CUSTO</span>
+                <div class="combo-imagem">🍔 🍔 🍟 🥤 🍦</div>
+                <h3>Combo Família</h3>
+                <ul class="lista-itens">
+                    <li>2 Hambúrgueres Premium</li>
+                    <li>2 Batatas Grandes</li>
+                    <li>2 Refrigerantes</li>
+                    <li>1 Sorvete</li>
+                </ul>
+                <p class="preco-combo">R$ 79,90</p>
+            </div>
+
+            <!-- Combo 3 -->
+            <div class="card-combo">
+                <div class="combo-imagem">🍔 🌭 🍟 🥤</div>
+                <h3>Combo Amigos</h3>
+                <ul class="lista-itens">
+                    <li>1 Hambúrguer Premium</li>
+                    <li>1 Hot Dog Especial</li>
+                    <li>1 Batata Grande</li>
+                    <li>1 Refrigerante</li>
+                </ul>
+                <p class="preco-combo">R$ 42,90</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Adicionais -->
+    <section class="adicionais">
+        <h2 class="titulo-secao">Acompanhamentos</h2>
+        <div class="container-adicionais">
+            <div class="item-adicional">
+                <span class="emoji">🍟</span>
+                <h4>Batata Frita</h4>
+                <p>Pequena: R$ 8,90 | Grande: R$ 12,90</p>
+            </div>
+
+            <div class="item-adicional">
+                <span class="emoji">🥤</span>
+                <h4>Refrigerante</h4>
+                <p>Pequeno: R$ 5,90 | Grande: R$ 8,90</p>
+            </div>
+
+            <div class="item-adicional">
+                <span class="emoji">🍦</span>
+                <h4>Sorvete</h4>
+                <p>Diversos sabores: R$ 7,90</p>
+            </div>
+
+            <div class="item-adicional">
+                <span class="emoji">🌮</span>
+                <h4>Hot Dog</h4>
+                <p>Com tudo: R$ 15,90</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Hamburgueria Delícia</h3>
+            <p>📍 Endereço: Rua do Hambúrguer, 123 - Centro</p>
+            <p>📞 Telefone: (11) 1234-5678</p>
+            <p>🕐 Funcionamento: Seg-Dom 11h00 - 22h00</p>
+            
+            <!-- Redes Sociais -->
+            <div class="redes-sociais">
+                <h4>Nos siga nas redes sociais:</h4>
+                <a href="https://www.instagram.com" target="_blank" class="social-link" title="Instagram">📱 Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" class="social-link" title="Facebook">f Facebook</a>
+                <a href="https://wa.me/5511912345678" target="_blank" class="social-link" title="WhatsApp">💬 WhatsApp</a>
+            </div>
+            
+            <p>&copy; 2026 Hamburgueria Delícia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
