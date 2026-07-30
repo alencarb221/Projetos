@@ -1,0 +1,549 @@
+/* =========================================================
+   TOKENS — paleta viva, tipografia e espaçamentos
+========================================================= */
+:root {
+  --bg: #FFFDF9;
+  --bg-alt: #FFF1F7;
+  --dark: #1A1025;
+
+  --pink: #FF2E93;
+  --pink-deep: #E0117A;
+  --purple: #7B2CBF;
+  --orange: #FF9F1C;
+  --teal: #00C2A8;
+
+  --ink: #241733;
+  --ink-soft: #6B5C78;
+  --white: #FFFFFF;
+
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 20px;
+  --container: 1140px;
+  --shadow: 0 20px 40px -18px rgba(123, 44, 191, 0.28);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--pink-deep);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--pink-deep);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.eyebrow--center { text-align: center; }
+.eyebrow--light { color: var(--orange); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  position: relative;
+  padding-bottom: 22px;
+  margin-bottom: 50px;
+}
+
+/* assinatura visual: um traço grosso e colorido em degradê,
+   remetendo a um risco de batom / esmalte */
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--orange));
+}
+
+.section-title--left { text-align: left; padding-bottom: 18px; }
+.section-title--left::after { left: 0; transform: none; }
+
+.section-title--light { color: var(--white); }
+.section-title--light::after { background: linear-gradient(90deg, var(--orange), var(--teal)); }
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 253, 249, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(36, 23, 51, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.logo span {
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav { display: flex; gap: 32px; }
+
+.nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.nav a:hover { color: var(--pink-deep); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+  position: relative;
+  padding: 140px 0 120px;
+  overflow: hidden;
+  background: var(--dark);
+  text-align: center;
+  isolation: isolate;
+}
+
+/* assinatura visual: "blobs" coloridos flutuando atrás do texto,
+   trazendo a energia vibrante de um salão de beleza */
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  z-index: -1;
+}
+
+.hero__blob--1 {
+  width: 420px;
+  height: 420px;
+  background: var(--pink);
+  top: -120px;
+  left: -100px;
+}
+
+.hero__blob--2 {
+  width: 380px;
+  height: 380px;
+  background: var(--teal);
+  bottom: -140px;
+  right: -100px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--pink) 0%, var(--orange) 50%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--white);
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.hero__text {
+  max-width: 480px;
+  margin: 20px auto 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+.btn {
+  display: inline-block;
+  padding: 15px 34px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(90deg, var(--pink), var(--pink-deep));
+  color: var(--white);
+  box-shadow: 0 14px 30px -10px rgba(255, 46, 147, 0.55);
+}
+
+.btn--primary:hover { transform: translateY(-2px); filter: brightness(1.06); }
+
+.btn--ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: var(--white);
+}
+
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* =========================================================
+   SEÇÕES GERAIS
+========================================================= */
+.section { padding: 100px 0; }
+.section--alt { background: var(--bg-alt); }
+.section--dark { background: var(--dark); }
+
+/* =========================================================
+   CARDS DE SERVIÇOS
+========================================================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 12px 28px -18px rgba(36, 23, 51, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+
+.card__icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 22px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.card__icon svg { width: 100%; height: 100%; }
+
+.card__icon--pink { background: rgba(255, 46, 147, 0.12); color: var(--pink-deep); }
+.card__icon--purple { background: rgba(123, 44, 191, 0.12); color: var(--purple); }
+.card__icon--orange { background: rgba(255, 159, 28, 0.15); color: var(--orange); }
+.card__icon--teal { background: rgba(0, 194, 168, 0.14); color: var(--teal); }
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.card p { font-size: 0.92rem; color: var(--ink-soft); }
+
+/* =========================================================
+   GALERIA (cards de fotos)
+========================================================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery__item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 12px 28px -16px rgba(36, 23, 51, 0.3);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery__item:hover img { transform: scale(1.08); }
+
+.gallery__item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--white);
+  background: linear-gradient(0deg, rgba(26, 16, 37, 0.85) 0%, rgba(26, 16, 37, 0) 100%);
+}
+
+/* =========================================================
+   NOSSA HISTÓRIA
+========================================================= */
+.story {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story__frame {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.story__frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.story__text p {
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  max-width: 520px;
+}
+
+/* =========================================================
+   DEPOIMENTOS
+========================================================= */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  border-left: 4px solid var(--pink);
+}
+
+.testimonial p {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.testimonial cite {
+  font-size: 0.85rem;
+  color: var(--pink-deep);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTATO
+========================================================= */
+.contact { text-align: center; }
+
+.contact__text {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 420px;
+  margin: 0 auto 40px;
+}
+
+.contact__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.contact-btn svg { width: 20px; height: 20px; }
+.contact-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
+
+.contact-btn--whatsapp { background: #22C35E; }
+.contact-btn--instagram { background: linear-gradient(135deg, var(--orange), var(--pink) 60%, var(--purple)); }
+.contact-btn--maps { background: var(--teal); }
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+.footer {
+  background: var(--dark);
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET (≤ 900px)
+========================================================= */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .testimonials { grid-template-columns: 1fr; }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .story__frame { order: -1; max-width: 340px; margin: 0 auto; }
+  .story__text { text-align: center; }
+  .story__text p { margin-left: auto; margin-right: auto; }
+  .section-title--left { text-align: center; }
+  .section-title--left::after { left: 50%; transform: translateX(-50%); }
+
+  .section { padding: 80px 0; }
+}
+
+/* =========================================================
+   RESPONSIVIDADE — MENU MOBILE / SMARTPHONE (≤ 720px)
+========================================================= */
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(36, 23, 51, 0.08);
+  }
+
+  .nav.nav--open { max-height: 300px; }
+
+  .nav a {
+    padding: 16px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(36, 23, 51, 0.06);
+  }
+
+  .nav-toggle--active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle--active span:nth-child(2) { opacity: 0; }
+  .nav-toggle--active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .hero { padding: 110px 0 90px; }
+}
+
+/* =========================================================
+   RESPONSIVIDADE — SMARTPHONES PEQUENOS (≤ 480px)
+========================================================= */
+@media (max-width: 480px) {
+  .container { padding: 0 18px; }
+
+  .cards { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .btn { text-align: center; }
+
+  .contact__buttons { flex-direction: column; align-items: stretch; }
+  .contact-btn { justify-content: center; }
+
+  .section { padding: 64px 0; }
+  .section-title { margin-bottom: 36px; }
+}
